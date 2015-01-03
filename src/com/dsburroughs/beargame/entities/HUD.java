@@ -3,7 +3,6 @@ package com.dsburroughs.beargame.entities;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
-import com.dsburroughs.beargame.handlers.B2DVars;
 import com.dsburroughs.beargame.main.Game;
 
 public class HUD {
