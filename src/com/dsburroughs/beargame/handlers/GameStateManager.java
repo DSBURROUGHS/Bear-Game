@@ -1,12 +1,12 @@
-package com.neet.blockbunny.handlers;
+package com.dsburroughs.beargame.handlers;
 
 import java.util.Stack;
 
-import com.neet.blockbunny.main.Game;
-import com.neet.blockbunny.states.GameState;
-import com.neet.blockbunny.states.LevelSelect;
-import com.neet.blockbunny.states.Menu;
-import com.neet.blockbunny.states.Play;
+import com.dsburroughs.beargame.main.Game;
+import com.dsburroughs.beargame.states.GameState;
+import com.dsburroughs.beargame.states.LevelSelect;
+import com.dsburroughs.beargame.states.Menu;
+import com.dsburroughs.beargame.states.Play;
 
 public class GameStateManager {
 	

@@ -1,10 +1,10 @@
-package com.neet.blockbunny.states;
+package com.dsburroughs.beargame.states;
 
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.neet.blockbunny.handlers.BoundedCamera;
-import com.neet.blockbunny.handlers.GameStateManager;
-import com.neet.blockbunny.main.Game;
+import com.dsburroughs.beargame.handlers.BoundedCamera;
+import com.dsburroughs.beargame.handlers.GameStateManager;
+import com.dsburroughs.beargame.main.Game;
 
 public abstract class GameState {
 	

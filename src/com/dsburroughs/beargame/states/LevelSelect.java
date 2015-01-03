@@ -1,9 +1,9 @@
-package com.neet.blockbunny.states;
+package com.dsburroughs.beargame.states;
 
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
-import com.neet.blockbunny.handlers.GameButton;
-import com.neet.blockbunny.handlers.GameStateManager;
-import com.neet.blockbunny.main.Game;
+import com.dsburroughs.beargame.handlers.GameButton;
+import com.dsburroughs.beargame.handlers.GameStateManager;
+import com.dsburroughs.beargame.main.Game;
 
 public class LevelSelect extends GameState {
 	

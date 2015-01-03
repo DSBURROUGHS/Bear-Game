@@ -1,9 +1,9 @@
-package com.neet.blockbunny.entities;
+package com.dsburroughs.beargame.entities;
 
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.physics.box2d.Body;
-import com.neet.blockbunny.main.Game;
+import com.dsburroughs.beargame.main.Game;
 
 public class Crystal extends B2DSprite {
 	

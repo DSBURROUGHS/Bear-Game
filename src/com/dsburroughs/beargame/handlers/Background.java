@@ -1,9 +1,9 @@
-package com.neet.blockbunny.handlers;
+package com.dsburroughs.beargame.handlers;
 
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
-import com.neet.blockbunny.main.Game;
+import com.dsburroughs.beargame.main.Game;
 
 public class Background {
 	

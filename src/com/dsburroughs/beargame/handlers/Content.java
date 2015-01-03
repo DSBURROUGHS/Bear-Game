@@ -1,4 +1,4 @@
-package com.neet.blockbunny.handlers;
+package com.dsburroughs.beargame.handlers;
 
 import java.util.HashMap;
 

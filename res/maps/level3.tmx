@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" renderorder="right-down" width="78" height="8" tilewidth="32" tileheight="32">
  <tileset firstgid="1" name="blocks" tilewidth="32" tileheight="32">
-  <image source="blocks.png" width="1920" height="1080"/>
+  <image source="blocks.png" width="95" height="32"/>
  </tileset>
  <layer name="Ground" width="78" height="8">
   <data encoding="base64" compression="zlib">
-   eJztk8EKwCAMQ1v//6N38TAkGiORweiDnKQ1jTWiKP5FdhUarWuGmmmG9y0y/D0dXsbcRp+rTFGN05ujB9LpXQ2InTEPp9zYJTQDmxX5QTuk5sY8fIEy325urNaV285/WM2o6s3M0wP8twD2
+   eJztksEKACAIQ83//+iuIUwLtYx6sIuHOYdEn9tog16lYgcNaHeGKJ/o/B7P7F4Z7LTI6ug06JelWJllZ6oIB0jivdfy97KST/sjr5Cn9r9aNst/VmjHSj50cwe8lwDQ
   </data>
  </layer>
  <objectgroup name="Relecs"/>

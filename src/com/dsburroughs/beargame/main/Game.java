@@ -1,15 +1,15 @@
-package com.neet.blockbunny.main;
+package com.dsburroughs.beargame.main;
 
 import com.badlogic.gdx.ApplicationListener;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.neet.blockbunny.handlers.BBInput;
-import com.neet.blockbunny.handlers.BBInputProcessor;
-import com.neet.blockbunny.handlers.BoundedCamera;
-import com.neet.blockbunny.handlers.Content;
-import com.neet.blockbunny.handlers.GameStateManager;
+import com.dsburroughs.beargame.handlers.BBInput;
+import com.dsburroughs.beargame.handlers.BBInputProcessor;
+import com.dsburroughs.beargame.handlers.BoundedCamera;
+import com.dsburroughs.beargame.handlers.Content;
+import com.dsburroughs.beargame.handlers.GameStateManager;
 
 public class Game implements ApplicationListener {
 	

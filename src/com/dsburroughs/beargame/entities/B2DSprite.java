@@ -1,11 +1,11 @@
-package com.neet.blockbunny.entities;
+package com.dsburroughs.beargame.entities;
 
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.Body;
-import com.neet.blockbunny.handlers.Animation;
-import com.neet.blockbunny.handlers.B2DVars;
+import com.dsburroughs.beargame.handlers.Animation;
+import com.dsburroughs.beargame.handlers.B2DVars;
 
 /**
  * Attaches animated sprites to box2d bodies

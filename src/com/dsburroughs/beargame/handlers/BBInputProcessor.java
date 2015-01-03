@@ -1,4 +1,4 @@
-package com.neet.blockbunny.handlers;
+package com.dsburroughs.beargame.handlers;
 
 import com.badlogic.gdx.InputAdapter;
 import com.badlogic.gdx.Input.Keys;

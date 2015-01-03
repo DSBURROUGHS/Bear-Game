@@ -1,6 +1,6 @@
-package com.neet.blockbunny.states;
+package com.dsburroughs.beargame.states;
 
-import static com.neet.blockbunny.handlers.B2DVars.PPM;
+import static com.dsburroughs.beargame.handlers.B2DVars.PPM;
 
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
@@ -14,13 +14,13 @@ import com.badlogic.gdx.physics.box2d.FixtureDef;
 import com.badlogic.gdx.physics.box2d.PolygonShape;
 import com.badlogic.gdx.physics.box2d.World;
 import com.badlogic.gdx.utils.Array;
-import com.neet.blockbunny.entities.B2DSprite;
-import com.neet.blockbunny.handlers.Animation;
-import com.neet.blockbunny.handlers.B2DVars;
-import com.neet.blockbunny.handlers.Background;
-import com.neet.blockbunny.handlers.GameButton;
-import com.neet.blockbunny.handlers.GameStateManager;
-import com.neet.blockbunny.main.Game;
+import com.dsburroughs.beargame.entities.B2DSprite;
+import com.dsburroughs.beargame.handlers.Animation;
+import com.dsburroughs.beargame.handlers.B2DVars;
+import com.dsburroughs.beargame.handlers.Background;
+import com.dsburroughs.beargame.handlers.GameButton;
+import com.dsburroughs.beargame.handlers.GameStateManager;
+import com.dsburroughs.beargame.main.Game;
 
 public class Menu extends GameState {
 	

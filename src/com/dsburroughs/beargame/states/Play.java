@@ -1,6 +1,6 @@
-package com.neet.blockbunny.states;
+package com.dsburroughs.beargame.states;
 
-import static com.neet.blockbunny.handlers.B2DVars.PPM;
+import static com.dsburroughs.beargame.handlers.B2DVars.PPM;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
@@ -25,17 +25,17 @@ import com.badlogic.gdx.physics.box2d.MassData;
 import com.badlogic.gdx.physics.box2d.PolygonShape;
 import com.badlogic.gdx.physics.box2d.World;
 import com.badlogic.gdx.utils.Array;
-import com.neet.blockbunny.entities.Crystal;
-import com.neet.blockbunny.entities.HUD;
-import com.neet.blockbunny.entities.Player;
-import com.neet.blockbunny.entities.Spike;
-import com.neet.blockbunny.handlers.B2DVars;
-import com.neet.blockbunny.handlers.BBContactListener;
-import com.neet.blockbunny.handlers.BBInput;
-import com.neet.blockbunny.handlers.Background;
-import com.neet.blockbunny.handlers.BoundedCamera;
-import com.neet.blockbunny.handlers.GameStateManager;
-import com.neet.blockbunny.main.Game;
+import com.dsburroughs.beargame.entities.Crystal;
+import com.dsburroughs.beargame.entities.HUD;
+import com.dsburroughs.beargame.entities.Player;
+import com.dsburroughs.beargame.entities.Spike;
+import com.dsburroughs.beargame.handlers.B2DVars;
+import com.dsburroughs.beargame.handlers.BBContactListener;
+import com.dsburroughs.beargame.handlers.BBInput;
+import com.dsburroughs.beargame.handlers.Background;
+import com.dsburroughs.beargame.handlers.BoundedCamera;
+import com.dsburroughs.beargame.handlers.GameStateManager;
+import com.dsburroughs.beargame.main.Game;
 
 public class Play extends GameState {
 
@@ -160,9 +160,6 @@ public class Play extends GameState {
 		MassData md = body.getMassData();
 		md.mass = 1;
 		body.setMassData(md);
-
-		// i need a ratio of 0.005
-		// so at 1kg, i need 200 N jump force
 
 	}
 
@@ -316,47 +313,11 @@ public class Play extends GameState {
 		}
 	}
 
-	/**
-	 * Switch player mask bits to next block.
-	 */
-	private void switchBlocks() {
-
-		// get player foot mask bits
-		Filter filter = player.getBody().getFixtureList().get(1).getFilterData();
-		short bits = filter.maskBits;
-
-		// switch to next block bit
-		// red -> green -> blue
-		if (bits == B2DVars.BIT_RED_BLOCK) {
-			bits = B2DVars.BIT_GREEN_BLOCK;
-		} else if (bits == B2DVars.BIT_GREEN_BLOCK) {
-			bits = B2DVars.BIT_BLUE_BLOCK;
-		} else if (bits == B2DVars.BIT_BLUE_BLOCK) {
-			bits = B2DVars.BIT_RED_BLOCK;
-		}
-
-		// set player foot mask bits
-		filter.maskBits = bits;
-		player.getBody().getFixtureList().get(1).setFilterData(filter);
-
-		// set player mask bits
-		bits |= B2DVars.BIT_CRYSTAL | B2DVars.BIT_SPIKE;
-		filter.maskBits = bits;
-		player.getBody().getFixtureList().get(0).setFilterData(filter);
-
-		// play sound
-		Game.res.getSound("changeblock").play();
-
-	}
-
 	public void handleInput() {
 
 		// keyboard input
 		if (BBInput.isPressed(BBInput.BUTTON1)) {
 			playerJump();
-		}
-		if (BBInput.isPressed(BBInput.BUTTON2)) {
-			switchBlocks();
 		}
 
 	}
@@ -401,12 +362,6 @@ public class Play extends GameState {
 		if (cl.isPlayerDead()) {
 			Game.res.getSound("hit").play();
 			gsm.setState(GameStateManager.MENU);
-		}
-
-		if (cl.playerCanJump()) {
-			player.setRunning(true);
-		} else {
-			player.setRunning(false);
 		}
 
 		// update crystals
