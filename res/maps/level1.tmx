@@ -8,5 +8,51 @@
    eJztk0sOACEIQ9X7H9qVmwktdvCTGJqwQuBRYimpVOplVRBWfjdHtP4E51ADYeUVLnWP0Z/1QfesgH2l2DzPN8b13W1mD4vD42Nc1jz0n9Rg81Tf2L299wpLxLc/MyIx4xurVXe94VsH/sYBdw==
   </data>
  </layer>
- <objectgroup name="Relecs"/>
+ <objectgroup name="Relecs">
+  <object x="681" y="33">
+   <ellipse/>
+  </object>
+  <object x="708" y="34">
+   <ellipse/>
+  </object>
+  <object x="971" y="171">
+   <ellipse/>
+  </object>
+  <object x="1358" y="157">
+   <ellipse/>
+  </object>
+  <object x="1580" y="71">
+   <ellipse/>
+  </object>
+  <object x="174.667" y="133.333">
+   <ellipse/>
+  </object>
+  <object x="204" y="132">
+   <ellipse/>
+  </object>
+  <object x="1261.33" y="90.6667">
+   <ellipse/>
+  </object>
+  <object x="2288" y="134.667">
+   <ellipse/>
+  </object>
+  <object x="2238.67" y="104">
+   <ellipse/>
+  </object>
+  <object x="2190.67" y="69.3333">
+   <ellipse/>
+  </object>
+  <object x="2002.67" y="98.6667">
+   <ellipse/>
+  </object>
+  <object x="1805.33" y="100">
+   <ellipse/>
+  </object>
+  <object x="1936" y="66.6667">
+   <ellipse/>
+  </object>
+  <object x="398.667" y="132">
+   <ellipse/>
+  </object>
+ </objectgroup>
 </map>

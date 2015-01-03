@@ -3,7 +3,7 @@ package com.neet.blockbunny.main;
 import com.badlogic.gdx.backends.lwjgl.LwjglApplication;
 import com.badlogic.gdx.backends.lwjgl.LwjglApplicationConfiguration;
 
-public class BlockBunnyDesktop {
+public class DesktopRun {
 	
 	public static void main(String[] args) {
 		
