@@ -3,6 +3,7 @@ package com.dsburroughs.beargame.handlers;
 import java.util.Stack;
 
 import com.dsburroughs.beargame.main.Game;
+import com.dsburroughs.beargame.states.CutScene;
 import com.dsburroughs.beargame.states.GameState;
 import com.dsburroughs.beargame.states.LevelSelect;
 import com.dsburroughs.beargame.states.Menu;
@@ -17,6 +18,7 @@ public class GameStateManager {
 	public static final int MENU = 83774392;
 	public static final int PLAY = 388031654;
 	public static final int LEVEL_SELECT = -9238732;
+	public static final int CUT_SCENE = 8675309;
 
 	private int maximumCurrentLevel;
 
@@ -47,11 +49,15 @@ public class GameStateManager {
 		if (state == PLAY)
 			return new Play(this);
 		if (state == LEVEL_SELECT) {
-
 			LevelSelect temp = new LevelSelect(this);
- 			temp.setMaximumLevel(maximumCurrentLevel);
+			temp.setMaximumLevel(maximumCurrentLevel);
 			return temp;
 		}
+		if (state == CUT_SCENE) {
+			CutScene temp = new CutScene(this);
+			return temp;
+		}
+
 		return null;
 	}
 
@@ -70,18 +76,7 @@ public class GameStateManager {
 	}
 
 	public void incrementLevel() {
-
 		maximumCurrentLevel++;
-
-		// GameState tempState = gameStates.peek();
-		// if (tempState instanceof LevelSelect) {
-		//
-		// LevelSelect select = (LevelSelect) tempState;
-		//
-		// for (int i = 0; i < maximumCurrentLevel; i++)
-		// select.increaseMaximumLevel();
-		// }
-
 	}
 
 	public int getMaximumLevel() {

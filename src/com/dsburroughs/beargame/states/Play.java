@@ -351,10 +351,12 @@ public class Play extends GameState {
 
 			Game.res.getSound("levelselect").play();
 
-			if (level == gsm.getMaximumLevel())
+			if (level == gsm.getMaximumLevel()) {
 				gsm.incrementLevel();
+				CutScene.level = level;
+			}
 
-			gsm.setState(GameStateManager.LEVEL_SELECT);
+			gsm.setState(GameStateManager.CUT_SCENE);
 
 		}
 

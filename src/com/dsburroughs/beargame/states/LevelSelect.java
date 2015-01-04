@@ -12,7 +12,9 @@ public class LevelSelect extends GameState {
 
 	private int currentMaxLevel;
 
-	private static final int MAX_COLUMN_SIZE = 5;
+	private static final int MAX_COLUMN_SIZE = 4;
+
+	private static final int MAXIMUM_LEVEL = 4;
 
 	public LevelSelect(GameStateManager gsm) {
 
@@ -37,9 +39,6 @@ public class LevelSelect extends GameState {
 		}
 
 		cam.setToOrtho(false, Game.V_WIDTH, Game.V_HEIGHT);
-
-		// Make first level available
-		// increaseMaximumLevel();
 
 	}
 
@@ -88,12 +87,15 @@ public class LevelSelect extends GameState {
 	 */
 	public void increaseMaximumLevel() {
 
- 		int row = currentMaxLevel / MAX_COLUMN_SIZE;
-		int col = currentMaxLevel % MAX_COLUMN_SIZE;
+		if (currentMaxLevel < MAXIMUM_LEVEL) {
 
-		buttons[row][col].setVisible(true);
+			int row = currentMaxLevel / MAX_COLUMN_SIZE;
+			int col = currentMaxLevel % MAX_COLUMN_SIZE;
 
-		currentMaxLevel++;
+			buttons[row][col].setVisible(true);
+
+			currentMaxLevel++;
+		}
 
 	}
 
