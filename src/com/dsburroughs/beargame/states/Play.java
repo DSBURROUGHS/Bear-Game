@@ -148,7 +148,6 @@ public class Play extends GameState {
 
 		// create player foot fixture
 		body.createFixture(fdef).setUserData("foot");
-		;
 		shape.dispose();
 
 		// create new player
@@ -345,8 +344,10 @@ public class Play extends GameState {
 
 		// check player win
 		if (player.getBody().getPosition().x * PPM > tileMapWidth * tileSize) {
+
 			Game.res.getSound("levelselect").play();
 			gsm.setState(GameStateManager.LEVEL_SELECT);
+			gsm.incrementLevel();
 		}
 
 		// check player failed

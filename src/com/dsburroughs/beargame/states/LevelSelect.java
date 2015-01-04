@@ -8,25 +8,38 @@ import com.dsburroughs.beargame.main.Game;
 public class LevelSelect extends GameState {
 
 	private TextureRegion reg;
-
 	private GameButton[][] buttons;
+
+	private int currentMaxLevel;
+
+	private static final int MAX_COLUMN_SIZE = 5;
 
 	public LevelSelect(GameStateManager gsm) {
 
 		super(gsm);
 
+		currentMaxLevel = 0;
+
 		reg = new TextureRegion(Game.res.getTexture("bgs"), 0, 0, 320, 240);
 
 		TextureRegion buttonReg = new TextureRegion(Game.res.getTexture("hud"), 0, 0, 32, 32);
-		buttons = new GameButton[1][4];
+		buttons = new GameButton[1][MAX_COLUMN_SIZE];
 		for (int row = 0; row < buttons.length; row++) {
 			for (int col = 0; col < buttons[0].length; col++) {
-				buttons[row][col] = new GameButton(buttonReg, 100 + col * 40, 200 - row * 40, cam);
-				buttons[row][col].setText(row * buttons[0].length + col + 1 + "");
+
+				GameButton button = new GameButton(buttonReg, 100 + col * 40, 200 - row * 40, cam);
+				button.setText(row * buttons[0].length + col + 1 + "");
+				button.setVisible(false);
+
+				buttons[row][col] = button;
+
 			}
 		}
 
 		cam.setToOrtho(false, Game.V_WIDTH, Game.V_HEIGHT);
+
+		// Make first level available
+		increaseMaximumLevel();
 
 	}
 
@@ -70,4 +83,23 @@ public class LevelSelect extends GameState {
 		// everything is in the resource manager com.neet.blockbunny.handlers.Content
 	}
 
+	/**
+	 * Used to increment the max level of the level select.
+	 */
+	public void increaseMaximumLevel() {
+		currentMaxLevel++;
+
+		int row = currentMaxLevel / MAX_COLUMN_SIZE;
+		int col = MAX_COLUMN_SIZE % currentMaxLevel;
+
+		buttons[row][col].setVisible(true);
+
+	}
+
+	public void setMaximumLevel(int maximumCurrentLevel) {
+
+		for (int i = 0; i < maximumCurrentLevel; i++) {
+			increaseMaximumLevel();
+		}
+	}
 }

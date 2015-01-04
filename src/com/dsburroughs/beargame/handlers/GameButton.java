@@ -28,12 +28,16 @@ public class GameButton {
 	private String text;
 	private TextureRegion[] font;
 
+	private boolean visible;
+
 	public GameButton(TextureRegion reg, float x, float y, OrthographicCamera cam) {
 
 		this.reg = reg;
 		this.x = x;
 		this.y = y;
 		this.cam = cam;
+
+		visible = true;
 
 		width = reg.getRegionWidth();
 		height = reg.getRegionHeight();
@@ -73,15 +77,17 @@ public class GameButton {
 
 	public void render(SpriteBatch sb) {
 
-		sb.begin();
+		if (isVisible()) {
+			sb.begin();
 
-		sb.draw(reg, x - width / 2, y - height / 2);
+			sb.draw(reg, x - width / 2, y - height / 2);
 
-		if (text != null) {
-			drawString(sb, text, x, y);
+			if (text != null) {
+				drawString(sb, text, x, y);
+			}
+
+			sb.end();
 		}
-
-		sb.end();
 
 	}
 
@@ -99,6 +105,22 @@ public class GameButton {
 				continue;
 			sb.draw(font[c], x + i * 9 - xo, y - yo);
 		}
+	}
+
+	/**
+	 * Sets the visibility of the game button
+	 */
+	public void setVisible(boolean visible) {
+		this.visible = visible;
+	}
+
+	/**
+	 * Returns the visibility of the game button
+	 * 
+	 * @return
+	 */
+	public boolean isVisible() {
+		return visible;
 	}
 
 }
