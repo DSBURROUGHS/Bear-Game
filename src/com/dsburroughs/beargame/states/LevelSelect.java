@@ -39,7 +39,7 @@ public class LevelSelect extends GameState {
 		cam.setToOrtho(false, Game.V_WIDTH, Game.V_HEIGHT);
 
 		// Make first level available
-		increaseMaximumLevel();
+		// increaseMaximumLevel();
 
 	}
 
@@ -87,12 +87,13 @@ public class LevelSelect extends GameState {
 	 * Used to increment the max level of the level select.
 	 */
 	public void increaseMaximumLevel() {
-		currentMaxLevel++;
 
-		int row = currentMaxLevel / MAX_COLUMN_SIZE;
-		int col = MAX_COLUMN_SIZE % currentMaxLevel;
+ 		int row = currentMaxLevel / MAX_COLUMN_SIZE;
+		int col = currentMaxLevel % MAX_COLUMN_SIZE;
 
 		buttons[row][col].setVisible(true);
+
+		currentMaxLevel++;
 
 	}
 

@@ -115,7 +115,7 @@ public class Play extends GameState {
 		bdef.type = BodyType.DynamicBody;
 		bdef.position.set(60 / PPM, 120 / PPM);
 		bdef.fixedRotation = true;
-		bdef.linearVelocity.set(1f, 0f);
+		bdef.linearVelocity.set(8f, 0f);
 
 		// create body from bodydef
 		Body body = world.createBody(bdef);
@@ -318,6 +318,10 @@ public class Play extends GameState {
 			playerJump();
 		}
 
+		if (BBInput.isPressed(BBInput.BUTTON2)) {
+
+		}
+
 	}
 
 	public void update(float dt) {
@@ -346,8 +350,12 @@ public class Play extends GameState {
 		if (player.getBody().getPosition().x * PPM > tileMapWidth * tileSize) {
 
 			Game.res.getSound("levelselect").play();
+
+			if (level == gsm.getMaximumLevel())
+				gsm.incrementLevel();
+
 			gsm.setState(GameStateManager.LEVEL_SELECT);
-			gsm.incrementLevel();
+
 		}
 
 		// check player failed

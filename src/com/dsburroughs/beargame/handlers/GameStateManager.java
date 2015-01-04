@@ -23,7 +23,7 @@ public class GameStateManager {
 	public GameStateManager(Game game) {
 		this.game = game;
 
-		maximumCurrentLevel = 0;
+		maximumCurrentLevel = 1;
 
 		gameStates = new Stack<GameState>();
 		pushState(MENU);
@@ -49,7 +49,7 @@ public class GameStateManager {
 		if (state == LEVEL_SELECT) {
 
 			LevelSelect temp = new LevelSelect(this);
-			temp.setMaximumLevel(maximumCurrentLevel);
+ 			temp.setMaximumLevel(maximumCurrentLevel);
 			return temp;
 		}
 		return null;
@@ -70,17 +70,22 @@ public class GameStateManager {
 	}
 
 	public void incrementLevel() {
+
 		maximumCurrentLevel++;
 
-		GameState tempState = gameStates.peek();
-		if (tempState instanceof LevelSelect) {
+		// GameState tempState = gameStates.peek();
+		// if (tempState instanceof LevelSelect) {
+		//
+		// LevelSelect select = (LevelSelect) tempState;
+		//
+		// for (int i = 0; i < maximumCurrentLevel; i++)
+		// select.increaseMaximumLevel();
+		// }
 
-			LevelSelect select = (LevelSelect) tempState;
+	}
 
-			for (int i = 0; i < maximumCurrentLevel; i++)
-				select.increaseMaximumLevel();
-
-		}
+	public int getMaximumLevel() {
+		return maximumCurrentLevel;
 	}
 
 }
