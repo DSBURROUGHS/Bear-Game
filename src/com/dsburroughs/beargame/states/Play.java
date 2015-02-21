@@ -38,6 +38,8 @@ import com.dsburroughs.beargame.main.Game;
 
 public class Play extends GameState {
 
+	private final float WALK_SPEED = 1f;
+
 	private boolean debug = false;
 
 	private World world;
@@ -115,7 +117,7 @@ public class Play extends GameState {
 		bdef.type = BodyType.DynamicBody;
 		bdef.position.set(60 / PPM, 120 / PPM);
 		bdef.fixedRotation = true;
-		bdef.linearVelocity.set(8f, 0f);
+		bdef.linearVelocity.set(WALK_SPEED, 0f);
 
 		// create body from bodydef
 		Body body = world.createBody(bdef);
@@ -171,7 +173,7 @@ public class Play extends GameState {
 			tileMap = new TmxMapLoader().load("res/maps/level" + level + ".tmx");
 		} catch (Exception e) {
 			e.printStackTrace();
-			System.out.println("Cannot find file: res/maps/level" + level + ".tmx");
+			System.out.println("Cannot find map: level" + level + ".tmx");
 			Gdx.app.exit();
 		}
 		tileMapWidth = (int) tileMap.getProperties().get("width");
@@ -179,8 +181,7 @@ public class Play extends GameState {
 		tileSize = (int) tileMap.getProperties().get("tilewidth");
 		tmRenderer = new OrthogonalTiledMapRenderer(tileMap);
 
-		TiledMapTileLayer layer;
-		layer = (TiledMapTileLayer) tileMap.getLayers().get("Ground");
+		TiledMapTileLayer layer = (TiledMapTileLayer) tileMap.getLayers().get("Ground");
 		createBlocks(layer, B2DVars.BIT_RED_BLOCK);
 
 	}
@@ -316,10 +317,6 @@ public class Play extends GameState {
 		// keyboard input
 		if (BBInput.isPressed(BBInput.BUTTON1)) {
 			playerJump();
-		}
-
-		if (BBInput.isPressed(BBInput.BUTTON2)) {
-
 		}
 
 	}

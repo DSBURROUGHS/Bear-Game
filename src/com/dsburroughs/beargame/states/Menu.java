@@ -169,7 +169,7 @@ public class Menu extends GameState {
 		// mouse/touch input
 		if (playButton.isClicked()) {
 			Game.res.getSound("crystal").play();
-			gsm.setState(GameStateManager.LEVEL_SELECT);
+			gsm.setState(GameStateManager.CUT_SCENE);
 		}
 
 	}

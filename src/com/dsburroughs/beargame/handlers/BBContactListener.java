@@ -10,6 +10,8 @@ import com.badlogic.gdx.utils.Array;
 
 public class BBContactListener implements ContactListener {
 
+	private boolean infinateJump = false;
+
 	private int numFootContacts;
 	private Array<Body> bodiesToRemove;
 	private boolean playerDead;
@@ -68,7 +70,11 @@ public class BBContactListener implements ContactListener {
 	}
 
 	public boolean playerCanJump() {
-		return numFootContacts >= 0;
+
+		if (infinateJump)
+			return true;
+
+		return numFootContacts > 0;
 	}
 
 	public Array<Body> getBodies() {

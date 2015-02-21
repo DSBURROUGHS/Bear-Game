@@ -2,14 +2,8 @@ package com.dsburroughs.beargame.states;
 
 import java.io.File;
 import java.io.IOException;
-import java.net.URI;
-import java.net.URISyntaxException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 
 import org.apache.commons.io.FileUtils;
-import org.apache.commons.io.IOUtils;
 
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
@@ -25,6 +19,7 @@ public class CutScene extends GameState {
 	private GameButton continueButton;
 
 	private BitmapFont font;
+	private String cutSceneText;
 
 	public static int level;
 
@@ -32,7 +27,8 @@ public class CutScene extends GameState {
 		super(gsm);
 
 		font = new BitmapFont();
-		// font.setColor(Color.);
+
+		cutSceneText = determineCutScene();
 
 		TextureRegion continueTexture = new TextureRegion(Game.res.getTexture("hud"), 0, 34, 58, 27);
 		continueButton = new GameButton(continueTexture, 160, 75, cam);
@@ -47,7 +43,6 @@ public class CutScene extends GameState {
 	@Override
 	public void handleInput() {
 
-		// TODO: Wait for continue to be pressed
 		if (continueButton.isClicked()) {
 			Game.res.getSound("crystal").play();
 			gsm.setState(GameStateManager.LEVEL_SELECT);
@@ -61,24 +56,21 @@ public class CutScene extends GameState {
 		handleInput();
 
 		continueButton.update(dt);
+		bg.update(dt);
 
 	}
 
 	@Override
 	public void render() {
 
-		String cutSceneText = determineCutScene();
-
 		sb.setProjectionMatrix(cam.combined);
 
-		// draw background
 		bg.render(sb);
 
-		// draw button
 		continueButton.render(sb);
 
-		// draw bunny
 		sb.begin();
+		bg.setVector(-20, 0);
 		font.drawWrapped(sb, cutSceneText, 40, 200, 250);
 		sb.end();
 
